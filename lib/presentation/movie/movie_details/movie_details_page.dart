@@ -6,7 +6,7 @@ import 'package:moviz/domain/movie/movie_object.dart';
 class MovieDetailsPage extends StatelessWidget {
   final Movie movie;
 
-   MovieDetailsPage({Key? key, required this.movie}) : super(key: key);
+   const MovieDetailsPage({Key? key, required this.movie}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

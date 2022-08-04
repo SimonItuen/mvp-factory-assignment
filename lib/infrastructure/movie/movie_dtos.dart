@@ -18,8 +18,8 @@ class MovieDto with _$MovieDto {
     required String genres,
     @JsonKey(disallowNullValue: false, defaultValue: '0.0')
     required String imDbRating,
-    @JsonKey(ignore: true, defaultValue: false) bool? favorite,
-    @JsonKey(ignore: true, defaultValue: false) bool? hidden,
+    @JsonKey(disallowNullValue: false, defaultValue: false) bool? favorite,
+    @JsonKey(disallowNullValue: false, defaultValue: false) bool? hidden,
   }) = _MovieDto;
 
   factory MovieDto.fromDomain(Movie movie) {
@@ -68,6 +68,6 @@ class MovieDto with _$MovieDto {
         title: title,
         description: description,
         genres: genres,
-        imDbRating: imDbRating);
+        imDbRating: imDbRating, favorite: favorite??false, hidden: hidden??false);
   }
 }

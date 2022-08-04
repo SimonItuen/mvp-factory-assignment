@@ -11,7 +11,7 @@ import 'package:moviz/presentation/movie/movie_list/widgets/movie_list_body_widg
 import 'package:moviz/presentation/movie/movie_list/widgets/search_movie_card.dart';
 
 class MovieListPage extends StatelessWidget {
-   MovieListPage({Key? key}) : super(key: key);
+   const MovieListPage({Key? key}) : super(key: key);
 
 
   @override

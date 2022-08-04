@@ -14,72 +14,59 @@ class LocalDataSource implements ILocalDataSource {
   LocalDataSource(this._databaseClient);
 
   @override
-  Future<Either<Failure, Unit>> addMovieToFavorite(
-      MovieDocument movieDocument) async {
+  Future<void> addMovieToFavorite(MovieDocument movieDocument) async {
     movieDocument.favorite = true;
-    var result = await _databaseClient.put(movieDocument.id, movieDocument);
-    return result.fold((failure) => left(failure), (r) => right(r));
+    await _databaseClient.put(movieDocument.id, movieDocument);
   }
 
   @override
-  Future<Either<Failure, Unit>> addMovieToHidden(
-      MovieDocument movieDocument) async {
+  Future<void> addMovieToHidden(MovieDocument movieDocument) async {
     movieDocument.hidden = true;
-    var result = await _databaseClient.put(movieDocument.id, movieDocument);
-    return result.fold((failure) => left(failure), (r) => right(r));
+    await _databaseClient.put(movieDocument.id, movieDocument);
   }
 
   @override
-  Future<Either<Failure, List<Movie>>> getFavoriteMovies() async {
+  Future<List<Movie>> getFavoriteMovies() async {
     var result = await _databaseClient.getAll();
-    return result.fold(
-        (failure) => left(failure),
-        (rawList) => right(rawList
-            .where((movieDocument) =>
-                movieDocument.favorite && !movieDocument.hidden)
-            .toList()
-            .map((movieDocument) =>
-                MovieDto.fromDbAdapter(movieDocument).toDomain())
-            .toList()));
+    return result
+        .where(
+            (movieDocument) => movieDocument.favorite && !movieDocument.hidden)
+        .toList()
+        .map(
+            (movieDocument) => MovieDto.fromDbAdapter(movieDocument).toDomain())
+        .toList();
   }
 
-
   @override
-  Future<Either<Failure, List<Movie>>> getHiddenMovies() async {
+  Future<List<Movie>> getHiddenMovies() async {
     var result = await _databaseClient.getAll();
-    return result.fold(
-        (failure) => left(failure),
-        (rawList) => right(rawList
-            .where((movieDocument) => movieDocument.hidden)
-            .toList()
-            .map((movieDocument) =>
-                MovieDto.fromDbAdapter(movieDocument).toDomain())
-            .toList()));
+    return result
+        .where((movieDocument) => movieDocument.hidden)
+        .toList()
+        .map(
+            (movieDocument) => MovieDto.fromDbAdapter(movieDocument).toDomain())
+        .toList();
   }
 
   @override
-  Future<Either<Failure, Unit>> removeMovieFromFavorite(
-      MovieDocument movieDocument) async {
+  Future<void> removeMovieFromFavorite(MovieDocument movieDocument) async {
     movieDocument.favorite = false;
-    var result = await _databaseClient.put(movieDocument.id, movieDocument);
-    return result.fold((failure) => left(failure), (r) => right(r));
+    await _databaseClient.put(movieDocument.id, movieDocument);
   }
 
   @override
-  Future<Either<Failure, List<Movie>>> getAllMovies() async {
+  Future<List<Movie>> getAllMovies() async {
     var result = await _databaseClient.getAll();
-    return result.fold(
-        (failure) => left(failure),
-        (rawList) => right(rawList
-            .toList()
-            .map((movieDocument) =>
-                MovieDto.fromDbAdapter(movieDocument).toDomain())
-            .toList()));
+    return result
+        .toList()
+        .map(
+            (movieDocument) => MovieDto.fromDbAdapter(movieDocument).toDomain())
+        .toList();
   }
 
   @override
-  Future<Either<Failure, Movie>> getSingleMovie(String id) async{
-    var result = await _databaseClient.get(id);
-    return result.fold((failure) => left(failure), (movie) => right(movie));
+  Future<Movie> getSingleMovie(String id) async {
+    var movieDocument = await _databaseClient.get(id);
+    return MovieDto.fromDbAdapter(movieDocument).toDomain();
   }
 }

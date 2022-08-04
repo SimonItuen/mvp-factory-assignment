@@ -10,36 +10,34 @@ class HiveDatabaseClient<T> implements IDatabaseClient<T> {
   HiveDatabaseClient();
 
   @override
-  Future<Either<Failure, T>> get(String id) async {
+  Future<T> get(String id) async {
     Box box = await Hive.openBox<MovieDocument>('Movies');
 
     T object = box.get(id);
     if (object == null) {
-      return left(const Failure.objectNotFound());
+      throw Exception();
     }
-    return right(object);
+    return object;
   }
 
   @override
-  Future<Either<Failure, Unit>> put(String id, T object) async {
+  Future<void> put(String id, T object) async {
     Box box = await Hive.openBox<MovieDocument>('Movies');
 
     await box.put(id, object);
-    return right(unit);
   }
 
   @override
-  Future<Either<Failure, Unit>> delete(String id) async {
+  Future<void> delete(String id) async {
     Box box = await Hive.openBox<MovieDocument>('Movies');
 
     await box.delete(id);
-    return right(unit);
   }
 
   @override
-  Future<Either<Failure, List<T>>> getAll() async {
+  Future<List<T>> getAll() async {
     Box box = await Hive.openBox<MovieDocument>('Movies');
-    return right(box.values.toList() as List<T>);
+    return box.values.toList() as List<T>;
   }
 
 

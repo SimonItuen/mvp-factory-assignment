@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:injectable/injectable.dart';
 import 'package:moviz/domain/core/failure.dart';
 import 'package:moviz/infrastructure/movie/core/constants.dart';
+import 'package:moviz/infrastructure/movie/core/exceptions.dart';
 import 'package:moviz/infrastructure/movie/remote_data_source/i_network_info.dart';
 import 'package:moviz/infrastructure/movie/remote_data_source/i_remote_data_source.dart';
 import 'package:moviz/infrastructure/movie/remote_data_source/responses.dart';
@@ -17,9 +18,9 @@ class RemoteDataSource implements IRemoteDataSource {
   RemoteDataSource(this._client, this._networkInfo);
 
   @override
-  Future<Either<Failure, MovieResponse>> searchMovie(String expression) async {
+  Future<MovieResponse> searchMovie(String expression) async {
     if (! await _networkInfo.isConnected) {
-      return left(const Failure.noInternetConnection());
+      throw Exception();
     }else {
       final response = await _client.get(
         Uri.parse(
@@ -30,14 +31,14 @@ class RemoteDataSource implements IRemoteDataSource {
       );
 
       if (response.statusCode == 200) {
-        return right(MovieResponse.fromJson(json.decode(response.body)));
+        return MovieResponse.fromJson(json.decode(response.body));
       } else {
         if (response.statusCode.toString().startsWith('4')) {
-          return left(Failure.clientError(response.statusCode));
+          throw ClientException();
         } else if (response.statusCode.toString().startsWith('5')) {
-          return left(Failure.serverError(response.statusCode));
+          throw ServerException(response.statusCode);
         } else {
-          return left(const Failure.somethingWentWrong());
+          throw Exception();
         }
       }
     }

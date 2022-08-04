@@ -1,4 +1,5 @@
 import 'package:hive/hive.dart';
+import 'package:moviz/domain/movie/movie_object.dart';
 
 part 'database_adapters.g.dart';
 
@@ -36,6 +37,18 @@ class MovieDocument {
     required this.genres,
     required this.imDbRating,
     this.favorite = false,
-    this.hidden= false,
+    this.hidden = false,
   });
+
+  @override
+  int get hashCode => id.hashCode;
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other is MovieDocument && other.id == id);
+  }
+
+  @override
+  String toString() => 'Movie($title)';
 }

@@ -1,0 +1,13 @@
+{
+  "queryString": "?title=Greatest",
+  "results": [
+    {
+      "id": "test_id",
+      "image": "http://sample_image",
+      "title": "test_title",
+      "description": "test_description",
+      "genres": "test_genres",
+      "imDbRating": "1.0"
+    }
+  ]
+}

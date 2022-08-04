@@ -4,18 +4,18 @@ import 'package:moviz/domain/movie/movie_object.dart';
 import 'package:moviz/infrastructure/movie/local_data_source/database_adapters.dart';
 
 abstract class ILocalDataSource {
-  Future<Either<Failure, List<Movie>>> getFavoriteMovies();
+  Future< List<Movie>> getFavoriteMovies();
 
-  Future<Either<Failure, List<Movie>>> getAllMovies();
+  Future< List<Movie>> getAllMovies();
 
-  Future<Either<Failure, List<Movie>>> getHiddenMovies();
+  Future< List<Movie>> getHiddenMovies();
 
-  Future<Either<Failure, Movie>> getSingleMovie(String id);
+  Future< Movie> getSingleMovie(String id);
 
-  Future<Either<Failure, Unit>> addMovieToFavorite(MovieDocument movieDocument);
+  Future<void> addMovieToFavorite(MovieDocument movieDocument);
 
-  Future<Either<Failure, Unit>> addMovieToHidden(MovieDocument movieDocument);
+  Future<void> addMovieToHidden(MovieDocument movieDocument);
 
-  Future<Either<Failure, Unit>> removeMovieFromFavorite(
+  Future<void> removeMovieFromFavorite(
       MovieDocument movieDocument);
 }

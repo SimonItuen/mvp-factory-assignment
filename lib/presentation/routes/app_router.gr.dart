@@ -24,10 +24,8 @@ class AppRouter extends _i3.RootStackRouter {
   @override
   final Map<String, _i3.PageFactory> pagesMap = {
     MovieListRoute.name: (routeData) {
-      final args = routeData.argsAs<MovieListRouteArgs>(
-          orElse: () => const MovieListRouteArgs());
       return _i3.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i1.MovieListPage(key: args.key));
+          routeData: routeData, child: const _i1.MovieListPage());
     },
     MovieDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<MovieDetailsRouteArgs>();
@@ -46,23 +44,10 @@ class AppRouter extends _i3.RootStackRouter {
 
 /// generated route for
 /// [_i1.MovieListPage]
-class MovieListRoute extends _i3.PageRouteInfo<MovieListRouteArgs> {
-  MovieListRoute({_i4.Key? key})
-      : super(MovieListRoute.name,
-            path: '/', args: MovieListRouteArgs(key: key));
+class MovieListRoute extends _i3.PageRouteInfo<void> {
+  const MovieListRoute() : super(MovieListRoute.name, path: '/');
 
   static const String name = 'MovieListRoute';
-}
-
-class MovieListRouteArgs {
-  const MovieListRouteArgs({this.key});
-
-  final _i4.Key? key;
-
-  @override
-  String toString() {
-    return 'MovieListRouteArgs{key: $key}';
-  }
 }
 
 /// generated route for

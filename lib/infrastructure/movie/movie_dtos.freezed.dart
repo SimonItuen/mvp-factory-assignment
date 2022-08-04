@@ -28,9 +28,9 @@ mixin _$MovieDto {
   String get genres => throw _privateConstructorUsedError;
   @JsonKey(disallowNullValue: false, defaultValue: '0.0')
   String get imDbRating => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true, defaultValue: false)
+  @JsonKey(disallowNullValue: false, defaultValue: false)
   bool? get favorite => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true, defaultValue: false)
+  @JsonKey(disallowNullValue: false, defaultValue: false)
   bool? get hidden => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -50,8 +50,8 @@ abstract class $MovieDtoCopyWith<$Res> {
       String description,
       @JsonKey(disallowNullValue: false, defaultValue: '') String genres,
       @JsonKey(disallowNullValue: false, defaultValue: '0.0') String imDbRating,
-      @JsonKey(ignore: true, defaultValue: false) bool? favorite,
-      @JsonKey(ignore: true, defaultValue: false) bool? hidden});
+      @JsonKey(disallowNullValue: false, defaultValue: false) bool? favorite,
+      @JsonKey(disallowNullValue: false, defaultValue: false) bool? hidden});
 }
 
 /// @nodoc
@@ -123,8 +123,8 @@ abstract class _$$_MovieDtoCopyWith<$Res> implements $MovieDtoCopyWith<$Res> {
       String description,
       @JsonKey(disallowNullValue: false, defaultValue: '') String genres,
       @JsonKey(disallowNullValue: false, defaultValue: '0.0') String imDbRating,
-      @JsonKey(ignore: true, defaultValue: false) bool? favorite,
-      @JsonKey(ignore: true, defaultValue: false) bool? hidden});
+      @JsonKey(disallowNullValue: false, defaultValue: false) bool? favorite,
+      @JsonKey(disallowNullValue: false, defaultValue: false) bool? hidden});
 }
 
 /// @nodoc
@@ -197,9 +197,9 @@ class _$_MovieDto extends _MovieDto {
           required this.genres,
       @JsonKey(disallowNullValue: false, defaultValue: '0.0')
           required this.imDbRating,
-      @JsonKey(ignore: true, defaultValue: false)
+      @JsonKey(disallowNullValue: false, defaultValue: false)
           this.favorite,
-      @JsonKey(ignore: true, defaultValue: false)
+      @JsonKey(disallowNullValue: false, defaultValue: false)
           this.hidden})
       : super._();
 
@@ -221,10 +221,10 @@ class _$_MovieDto extends _MovieDto {
   @JsonKey(disallowNullValue: false, defaultValue: '0.0')
   final String imDbRating;
   @override
-  @JsonKey(ignore: true, defaultValue: false)
+  @JsonKey(disallowNullValue: false, defaultValue: false)
   final bool? favorite;
   @override
-  @JsonKey(ignore: true, defaultValue: false)
+  @JsonKey(disallowNullValue: false, defaultValue: false)
   final bool? hidden;
 
   @override
@@ -283,9 +283,9 @@ abstract class _MovieDto extends MovieDto {
           required final String genres,
       @JsonKey(disallowNullValue: false, defaultValue: '0.0')
           required final String imDbRating,
-      @JsonKey(ignore: true, defaultValue: false)
+      @JsonKey(disallowNullValue: false, defaultValue: false)
           final bool? favorite,
-      @JsonKey(ignore: true, defaultValue: false)
+      @JsonKey(disallowNullValue: false, defaultValue: false)
           final bool? hidden}) = _$_MovieDto;
   const _MovieDto._() : super._();
 
@@ -306,10 +306,10 @@ abstract class _MovieDto extends MovieDto {
   @JsonKey(disallowNullValue: false, defaultValue: '0.0')
   String get imDbRating => throw _privateConstructorUsedError;
   @override
-  @JsonKey(ignore: true, defaultValue: false)
+  @JsonKey(disallowNullValue: false, defaultValue: false)
   bool? get favorite => throw _privateConstructorUsedError;
   @override
-  @JsonKey(ignore: true, defaultValue: false)
+  @JsonKey(disallowNullValue: false, defaultValue: false)
   bool? get hidden => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

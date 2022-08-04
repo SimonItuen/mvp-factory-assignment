@@ -13,6 +13,8 @@ _$_MovieDto _$$_MovieDtoFromJson(Map<String, dynamic> json) => _$_MovieDto(
       description: json['description'] as String,
       genres: json['genres'] as String? ?? '',
       imDbRating: json['imDbRating'] as String? ?? '0.0',
+      favorite: json['favorite'] as bool? ?? false,
+      hidden: json['hidden'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_MovieDtoToJson(_$_MovieDto instance) =>
@@ -23,4 +25,6 @@ Map<String, dynamic> _$$_MovieDtoToJson(_$_MovieDto instance) =>
       'description': instance.description,
       'genres': instance.genres,
       'imDbRating': instance.imDbRating,
+      'favorite': instance.favorite,
+      'hidden': instance.hidden,
     };
