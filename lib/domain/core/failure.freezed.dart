@@ -259,7 +259,7 @@ class _$_ServerError implements _ServerError {
 abstract class _ServerError implements Failure {
   const factory _ServerError(final int statusCode) = _$_ServerError;
 
-  int get statusCode => throw _privateConstructorUsedError;
+  int get statusCode;
   @JsonKey(ignore: true)
   _$$_ServerErrorCopyWith<_$_ServerError> get copyWith =>
       throw _privateConstructorUsedError;
@@ -423,7 +423,7 @@ class _$_ClientError implements _ClientError {
 abstract class _ClientError implements Failure {
   const factory _ClientError(final int statusCode) = _$_ClientError;
 
-  int get statusCode => throw _privateConstructorUsedError;
+  int get statusCode;
   @JsonKey(ignore: true)
   _$$_ClientErrorCopyWith<_$_ClientError> get copyWith =>
       throw _privateConstructorUsedError;

@@ -269,7 +269,9 @@ class _$_MovieDto extends _MovieDto {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MovieDtoToJson(this);
+    return _$$_MovieDtoToJson(
+      this,
+    );
   }
 }
 
@@ -292,25 +294,25 @@ abstract class _MovieDto extends MovieDto {
   factory _MovieDto.fromJson(Map<String, dynamic> json) = _$_MovieDto.fromJson;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String get image;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
   @JsonKey(disallowNullValue: false, defaultValue: '')
-  String get genres => throw _privateConstructorUsedError;
+  String get genres;
   @override
   @JsonKey(disallowNullValue: false, defaultValue: '0.0')
-  String get imDbRating => throw _privateConstructorUsedError;
+  String get imDbRating;
   @override
   @JsonKey(disallowNullValue: false, defaultValue: false)
-  bool? get favorite => throw _privateConstructorUsedError;
+  bool? get favorite;
   @override
   @JsonKey(disallowNullValue: false, defaultValue: false)
-  bool? get hidden => throw _privateConstructorUsedError;
+  bool? get hidden;
   @override
   @JsonKey(ignore: true)
   _$$_MovieDtoCopyWith<_$_MovieDto> get copyWith =>

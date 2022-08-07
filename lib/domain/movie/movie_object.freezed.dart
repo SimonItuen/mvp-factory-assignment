@@ -254,21 +254,21 @@ abstract class _Movie implements Movie {
       final bool? hidden}) = _$_Movie;
 
   @override
-  String get id => throw _privateConstructorUsedError;
+  String get id;
   @override
-  String get imageUrl => throw _privateConstructorUsedError;
+  String get imageUrl;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String get description;
   @override
-  String get genres => throw _privateConstructorUsedError;
+  String get genres;
   @override
-  double get rating => throw _privateConstructorUsedError;
+  double get rating;
   @override
-  bool? get favorite => throw _privateConstructorUsedError;
+  bool? get favorite;
   @override
-  bool? get hidden => throw _privateConstructorUsedError;
+  bool? get hidden;
   @override
   @JsonKey(ignore: true)
   _$$_MovieCopyWith<_$_Movie> get copyWith =>

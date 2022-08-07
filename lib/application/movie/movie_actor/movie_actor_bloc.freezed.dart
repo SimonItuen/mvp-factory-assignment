@@ -246,7 +246,7 @@ abstract class AddFavoriteMovie implements MovieActorEvent {
   const factory AddFavoriteMovie(final Movie movie) = _$AddFavoriteMovie;
 
   @override
-  Movie get movie => throw _privateConstructorUsedError;
+  Movie get movie;
   @override
   @JsonKey(ignore: true)
   _$$AddFavoriteMovieCopyWith<_$AddFavoriteMovie> get copyWith =>
@@ -393,7 +393,7 @@ abstract class AddHiddenMovie implements MovieActorEvent {
   const factory AddHiddenMovie(final Movie movie) = _$AddHiddenMovie;
 
   @override
-  Movie get movie => throw _privateConstructorUsedError;
+  Movie get movie;
   @override
   @JsonKey(ignore: true)
   _$$AddHiddenMovieCopyWith<_$AddHiddenMovie> get copyWith =>
@@ -541,7 +541,7 @@ abstract class RemoveFavoriteMovie implements MovieActorEvent {
   const factory RemoveFavoriteMovie(final Movie movie) = _$RemoveFavoriteMovie;
 
   @override
-  Movie get movie => throw _privateConstructorUsedError;
+  Movie get movie;
   @override
   @JsonKey(ignore: true)
   _$$RemoveFavoriteMovieCopyWith<_$RemoveFavoriteMovie> get copyWith =>
@@ -1000,7 +1000,7 @@ class _$_actionFailure implements _actionFailure {
 abstract class _actionFailure implements MovieActorState {
   const factory _actionFailure(final Failure failure) = _$_actionFailure;
 
-  Failure get failure => throw _privateConstructorUsedError;
+  Failure get failure;
   @JsonKey(ignore: true)
   _$$_actionFailureCopyWith<_$_actionFailure> get copyWith =>
       throw _privateConstructorUsedError;

@@ -152,7 +152,9 @@ class _$_MovieResponse implements _MovieResponse {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_MovieResponseToJson(this);
+    return _$$_MovieResponseToJson(
+      this,
+    );
   }
 }
 
@@ -165,9 +167,9 @@ abstract class _MovieResponse implements MovieResponse {
       _$_MovieResponse.fromJson;
 
   @override
-  String get queryString => throw _privateConstructorUsedError;
+  String get queryString;
   @override
-  List<Map<String, dynamic>> get results => throw _privateConstructorUsedError;
+  List<Map<String, dynamic>> get results;
   @override
   @JsonKey(ignore: true)
   _$$_MovieResponseCopyWith<_$_MovieResponse> get copyWith =>

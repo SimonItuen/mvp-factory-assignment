@@ -335,8 +335,7 @@ abstract class OnMoviesReceieved implements MovieWatcherEvent {
   const factory OnMoviesReceieved(
       final Either<Failure, List<Movie>> failureOrMovies) = _$OnMoviesReceieved;
 
-  Either<Failure, List<Movie>> get failureOrMovies =>
-      throw _privateConstructorUsedError;
+  Either<Failure, List<Movie>> get failureOrMovies;
   @JsonKey(ignore: true)
   _$$OnMoviesReceievedCopyWith<_$OnMoviesReceieved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1046,7 +1045,7 @@ class _$_Content implements _Content {
 abstract class _Content implements MovieWatcherState {
   const factory _Content(final List<Movie> movies) = _$_Content;
 
-  List<Movie> get movies => throw _privateConstructorUsedError;
+  List<Movie> get movies;
   @JsonKey(ignore: true)
   _$$_ContentCopyWith<_$_Content> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1204,7 +1203,7 @@ class _$_Error implements _Error {
 abstract class _Error implements MovieWatcherState {
   const factory _Error(final Failure failure) = _$_Error;
 
-  Failure get failure => throw _privateConstructorUsedError;
+  Failure get failure;
   @JsonKey(ignore: true)
   _$$_ErrorCopyWith<_$_Error> get copyWith =>
       throw _privateConstructorUsedError;

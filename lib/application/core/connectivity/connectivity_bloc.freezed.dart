@@ -321,7 +321,7 @@ abstract class OnConnectionStatusReceived implements ConnectivityEvent {
   const factory OnConnectionStatusReceived(final bool isDeviceConnected) =
       _$OnConnectionStatusReceived;
 
-  bool get isDeviceConnected => throw _privateConstructorUsedError;
+  bool get isDeviceConnected;
   @JsonKey(ignore: true)
   _$$OnConnectionStatusReceivedCopyWith<_$OnConnectionStatusReceived>
       get copyWith => throw _privateConstructorUsedError;

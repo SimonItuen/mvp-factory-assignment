@@ -201,7 +201,7 @@ class _$OnSearch implements OnSearch {
 abstract class OnSearch implements MovieSearchEvent {
   const factory OnSearch(final String expression) = _$OnSearch;
 
-  String get expression => throw _privateConstructorUsedError;
+  String get expression;
   @JsonKey(ignore: true)
   _$$OnSearchCopyWith<_$OnSearch> get copyWith =>
       throw _privateConstructorUsedError;
@@ -354,8 +354,8 @@ class _$OnRebuild implements OnRebuild {
 abstract class OnRebuild implements MovieSearchEvent {
   const factory OnRebuild(final Movie movie, final bool remove) = _$OnRebuild;
 
-  Movie get movie => throw _privateConstructorUsedError;
-  bool get remove => throw _privateConstructorUsedError;
+  Movie get movie;
+  bool get remove;
   @JsonKey(ignore: true)
   _$$OnRebuildCopyWith<_$OnRebuild> get copyWith =>
       throw _privateConstructorUsedError;
@@ -951,7 +951,7 @@ class _$_Content implements _Content {
 abstract class _Content implements MovieSearchState {
   const factory _Content(final List<Movie> movies) = _$_Content;
 
-  List<Movie> get movies => throw _privateConstructorUsedError;
+  List<Movie> get movies;
   @JsonKey(ignore: true)
   _$$_ContentCopyWith<_$_Content> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1109,7 +1109,7 @@ class _$_Error implements _Error {
 abstract class _Error implements MovieSearchState {
   const factory _Error(final Failure failure) = _$_Error;
 
-  Failure get failure => throw _privateConstructorUsedError;
+  Failure get failure;
   @JsonKey(ignore: true)
   _$$_ErrorCopyWith<_$_Error> get copyWith =>
       throw _privateConstructorUsedError;
